@@ -94,10 +94,14 @@
             <%= comment.com %>
           </td>
           <td></td>
-          <td>
-            <%= link_to "削除", book_comments_path(@book), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger" %>
-          </td>
+          <% if @book.user == current_user %>
+            <td>
+              <%= link_to "削除", book_comments_path(@book), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger" %>
+            </td>
+            <% else %>
+            <td></td>
           <% end %>
+        <% end %>
         </tr>
 
       </table>
