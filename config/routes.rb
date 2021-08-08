@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :users,only: [:show,:index,:edit,:update]
   resources :relationships, only: [:show, :create, :destroy]
   resources :followers, only: [:show]
-  #get 'relationships/followers_show' => 'relationships#followers_show'
+  get '/search', to: 'searchs#search'
 
 
   resources :books do

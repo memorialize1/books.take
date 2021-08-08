@@ -14,14 +14,14 @@
           <%= attachment_image_tag(ent.user, :profile_image, :fill, 50, 50, fallback: "no-image-icon.jpg") %>
           <% end %>
         </td>
-        <td><%= link_to ent.title, book_path(ent), class: '#{ent.id}'} %></td>
+        <td><%= link_to ent.title, book_path(ent) %></td>
         <td><%= ent.body %></td>
 
         <td>
           <% if ent.favorited_by?(current_user) %>
 
               <p>
-                <%= link_to book_favorites_path(ent), method: :delete, class: '#{ent.id}'} do %>
+                <%= link_to book_favorites_path(ent), method: :delete do %>
                 ♥<%= ent.favorites.count %>いいね
                 <% end %>
               </p>
@@ -29,7 +29,7 @@
               <% else %>
 
              <p>
-              <%= link_to book_favorites_path(ent), method: :post, class: '#{ent.id}'} do %>
+              <%= link_to book_favorites_path(ent), method: :post do %>
                 ♡<%= ent.favorites.count %>いいね
               <% end %>
             </p>

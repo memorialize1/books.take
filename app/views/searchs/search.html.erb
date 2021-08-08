@@ -18,8 +18,16 @@
           <% end %>
         </div>
 
-        <%= render 'index', books: @books %>
 
+
+        <% if @model == 'user' %>
+
+          <%= render 'indexu', users: @search %>
+
+        <% else %>
+
+          <%= render 'index', books: @search %>
+        <% end %>
     </div>
   </div>
 </div>

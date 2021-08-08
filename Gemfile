@@ -68,3 +68,6 @@ gem "refile-mini_magick"
 gem 'jquery-rails'
 gem 'font-awesome-sass', '~> 5.13'
 gem 'bootstrap', '~> 4.5'
+
+gem 'pry-byebug'
+#処理を止めて中身を確認するツール

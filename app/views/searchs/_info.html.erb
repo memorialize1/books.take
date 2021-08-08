@@ -1,0 +1,36 @@
+<table class='table'>
+  <tr><%= attachment_image_tag(user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg") %></tr>
+  <tr>
+	  <th>name</th>
+	  <th><%= user.name %></th>
+  </tr>
+  <tr>
+	  <th>introduction</th>
+	  <th><%= user.introduction %></th>
+  </tr>
+
+  <tr>
+
+    <td>フォロー</td>
+    <td>
+      <%= link_to relationship_path(user.id) do %>
+      <%= user.followings.count %>
+      <% end %>
+    </td>
+
+  </tr>
+
+  <tr>
+    <td>フォロワー</td>
+    <td>
+      <%= link_to follower_path(user.id) do %>
+      <%= user.followers.count %>
+      <% end %>
+    </td>
+  </tr>
+
+</table>
+
+<div class='row'>
+  <%= link_to '',edit_user_path(user),class: "btn btn-outline-secondary btn-block fas fa-user-cog edit_user_#{user.id}" %>
+</div>
